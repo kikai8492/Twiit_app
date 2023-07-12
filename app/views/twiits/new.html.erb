@@ -1,0 +1,8 @@
+<%= form_with(model: @twiit) do |form|%>
+  <div class="twiit">
+    <label form.label="twiit_content">ツイート内容</label>
+    <input type_field="text" name="twiit[content]">
+  </div>
+  <%= form.submit%>
+  
+<% end %>

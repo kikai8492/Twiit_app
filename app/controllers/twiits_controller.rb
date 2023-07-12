@@ -1,5 +1,6 @@
 class TwiitsController < ApplicationController
   def index
+    @twiit = Twiit.all
   end
 
   def new
@@ -23,6 +24,6 @@ class TwiitsController < ApplicationController
   end
 
   def destroy
-    
+
   end
 end
