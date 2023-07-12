@@ -1,6 +1,11 @@
 <div class="center">
+<% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+<% end %>
 
   <h1>Twiits</h1>
+
+  
 
   <p>ツイート一覧</p>
 
@@ -13,6 +18,8 @@
     <tr>
       <td><%= twiit.content %></td>
       <td><%= link_to "詳細の確認", twiit_path(twiit.id)%></td>
+      <td><%= link_to "ツイートの編集", edit_twiit_path(twiit.id), data: {confirm: "本当に編集してもいいですか？"}%></td>
+      <td><%= link_to "ツイートを削除", twiit_path(twiit.id),  method: :delete,data: {confirm: "本当に削除してもいいですか？"}%></td>
     </tr>
   <% end %>
   </table>

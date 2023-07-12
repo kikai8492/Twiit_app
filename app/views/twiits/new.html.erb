@@ -1,8 +1,17 @@
-<%= form_with(model: @twiit) do |form|%>
+<%= form_with(model: @twiit, local: true) do |form| %>
+  <% if @twiit.errors.any? %>
+  <div class="error_messages">
+    <% @twiit.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </div>
+  <% end %>
+
   <div class="twiit">
-    <label form.label="twiit_content">ツイート内容</label>
-    <input type_field="text" name="twiit[content]">
+    <%= form.label :content, "ツイート内容" %>
+    <%= form.text_field :content %>
   </div>
   <%= form.submit%>
-  
 <% end %>
+
+

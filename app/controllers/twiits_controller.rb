@@ -8,7 +8,7 @@ class TwiitsController < ApplicationController
   end
 
   def create
-    @twiit = Twiit.new(Twiit_params)
+    @twiit = Twiit.new(twiit_params)
     if params[:back]
       render :new
     else
@@ -25,15 +25,23 @@ class TwiitsController < ApplicationController
   end
 
   def edit
-
+    @twiit = Twiit.find(params[:id])
   end
 
   def update
+    @twiit = Twiit.find(params[:id])
 
+    if @twiit.update(twiit_params)
+      redirect_to twiits_path, notice:"ツイートを編集しました"
+    else
+      render :edit
+    end
   end
 
   def destroy
-
+    @twiit = Twiit.find(params[:id])
+    @twiit.destroy
+    redirect_to twiits_path, notice:"削除しました。"
   end
 
   def confirm

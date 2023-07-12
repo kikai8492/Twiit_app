@@ -1,0 +1,15 @@
+<%= form_with(model: @twiit, local: true) do |form| %>
+  <% if @twiit.errors.any? %>
+  <div class="error_messages">
+    <% @twiit.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </div>
+  <% end %>
+
+  <div class="twiit_content">
+    <%= form.label :内容 %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
