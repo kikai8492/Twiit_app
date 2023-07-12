@@ -1,2 +1,21 @@
-<h1>Twiits</h1>
-<p>投稿してみよう</p>
+<div class="center">
+
+  <h1>Twiits</h1>
+
+  <p>ツイート一覧</p>
+
+  <table class="table">
+    <tr>
+      <th>内容</th>
+    </tr>
+
+  <% @twiits.each do |twiit| %>
+    <tr>
+      <td><%= twiit.content %></td>
+      <td><%= link_to "詳細の確認", twiit_path(twiit.id)%></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <%= link_to '新しく投稿する', new_twiit_path %>
+</div>

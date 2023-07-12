@@ -1,6 +1,6 @@
 class TwiitsController < ApplicationController
   def index
-    @twiit = Twiit.all
+    @twiits = Twiit.all
   end
 
   def new
@@ -8,11 +8,20 @@ class TwiitsController < ApplicationController
   end
 
   def create
-    
+    @twiit = Twiit.new(Twiit_params)
+    if params[:back]
+      render :new
+    else
+      if @twiit.save
+        render :new
+      else
+        render :new
+      end
+    end
   end
 
   def show
-
+  @twiit = Twiit.find(params[:id])
   end
 
   def edit
@@ -29,6 +38,12 @@ class TwiitsController < ApplicationController
 
   def confirm
     @twiit = Twiit.new(twiit_params)
-    render :new if @blog.invalid?
+    render :new if @twiit.invalid?
+  end
+
+  private
+
+  def twiit_params
+    params.require(:twiit).permit(:content)
   end
 end
