@@ -8,7 +8,7 @@ class TwiitsController < ApplicationController
   end
 
   def create
-
+    
   end
 
   def show
@@ -25,5 +25,10 @@ class TwiitsController < ApplicationController
 
   def destroy
 
+  end
+
+  def confirm
+    @twiit = Twiit.new(twiit_params)
+    render :new if @blog.invalid?
   end
 end
