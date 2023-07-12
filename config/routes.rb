@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get 'twiits/index'
+  # get 'twiits/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get "/twiits", to: "twiits#index"
 end
