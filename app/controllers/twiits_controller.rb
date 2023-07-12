@@ -2,7 +2,27 @@ class TwiitsController < ApplicationController
   def index
   end
 
-  # def create
+  def new
+    @twiit = Twiit.new
+  end
 
-  # end
+  def create
+
+  end
+
+  def show
+
+  end
+
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def destroy
+    
+  end
 end
