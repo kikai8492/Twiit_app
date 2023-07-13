@@ -21,7 +21,7 @@ class TwiitsController < ApplicationController
   end
 
   def show
-  @twiit = Twiit.find(params[:id])
+    @twiit = Twiit.find(params[:id])
   end
 
   def edit

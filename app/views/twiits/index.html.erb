@@ -1,10 +1,11 @@
 <div class="center">
-<% if flash[:notice] %>
+  <% if flash[:notice] %>
     <p class="notice"><%= flash[:notice] %></p>
 <% end %>
 
-  <h1>Twiits</h1>
-
+<header>
+  <h1 class="title">Twiits</h1>
+</header>
   
 
   <p>ツイート一覧</p>
@@ -25,4 +26,9 @@
   </table>
 
   <%= link_to '新しく投稿する', new_twiit_path %>
+
+  <footer>
+    <p class="fotter_message">@twiit</p>
+  </footer>
 </div>
+

@@ -1,17 +1,32 @@
 body {
   background-color:yellow;
+  margin: 0;
 }
 
 .center {
   text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 15rem; /* 下部に固定 */
+  
 }
 
-h1 {
+header {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%;
+  background-color: white;
+}
+
+
+.title {
   color: aqua;
   font-size: 10rem;
-  /* position: fixed;
-  top: 0;
-  width: 100%; */
+  text-align: center;
+  margin: 0;
+      padding: 20px; 
+ 
 }
 
 p {
@@ -20,4 +35,17 @@ p {
 
 .table {
   margin: 0 auto;
+}
+
+
+
+footer {
+  position: fixed;
+  bottom: 0; 
+  left: 0; 
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 20px; 
+  text-align: center;
 }
