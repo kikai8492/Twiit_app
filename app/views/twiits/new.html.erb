@@ -1,4 +1,4 @@
-<%= form_with(model: @twiit, local: true) do |form| %>
+<%= form_with(model: @twiit, url: confirm_twiits_path, method: :post, local: true) do |form| %>
   <% if @twiit.errors.any? %>
   <div class="error_messages">
     <% @twiit.errors.full_messages.each do |message| %>
@@ -13,5 +13,4 @@
   </div>
   <%= form.submit%>
 <% end %>
-
 
