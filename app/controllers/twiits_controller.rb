@@ -13,7 +13,7 @@ class TwiitsController < ApplicationController
       render :new
     else
       if @twiit.save
-        render :new
+        redirect_to twiits_path, notice: "投稿しました"
       else
         render :new
       end
